@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  24 SEP 2021 03:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  24 SEP 2021 22:49
 entering extended mode
 **"c:/Users/Guest Login/.vscode/CSE-15/Homeworks/Homework1.tex"
 (c:/Users/Guest Login/.vscode/CSE-15/Homeworks/Homework1.tex
@@ -112,22 +112,57 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 65.
+(Font)              <10.95> on input line 38.
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--42
+
+ []
+
 [1
 
-{C:/Users/Guest Login/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (Homework1.aux) ) 
+{C:/Users/Guest Login/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+Overfull \hbox (8.3925pt too wide) in paragraph at lines 128--150
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 231--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
+
+ []
+
+[3] [4] (Homework1.aux) ) 
 Here is how much of TeX's memory you used:
  1308 strings out of 478927
  21881 string characters out of 2849655
- 325026 words of memory out of 3000000
+ 358026 words of memory out of 3000000
  19215 multiletter control sequences out of 15000+600000
  408030 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,66p,186b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,7n,66p,252b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Guest Login\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Guest Login/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Guest Login/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Guest Login/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Guest Login/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Guest Login/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Guest Login/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Homework1.pdf (1 page, 77281 bytes).
+Output written on Homework1.pdf (4 pages, 92191 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
+ 50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

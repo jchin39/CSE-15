@@ -15,17 +15,17 @@
 \begin{document}
 
 % Edit the following putting your first and last names and replace XXX with your lab section (e.g., 03L).
-\author{Firstname Lastname\\
-Lab F21-CSE 015 XXX}
+\author{Joshua Chin\\
+Lab F21-CSE 015 07L}
 
 % Edit the following replacing X with the HW number.
 \title{CSE 015: Discrete Mathematics\\
 Fall 2021\\
-Homework \#X\\
+Homework \#1\\
 Solution}
 
 % Put today's date in the following.
-\date{September 1, 2021}
+\date{September 24, 2021}
 \maketitle
 
 % ========== Begin questions here
@@ -33,53 +33,239 @@ Solution}
 
 \item
 \textbf{Question 1:}
+Translating English Sentences \\
+Translate the following compound propositions to english. \\
+$p$: "Josh scored 100\% in the CSE015 Final" \\
+$q$: "Josh scored at least 90\% in the labs."\\
+$r$: "Josh receives an A+ in CSE015." \\
+$t$: "Josh is a CSE major.\\
 
 \begin{enumerate}[label=(\alph*)]
 \item
-You provide the solution to question 1(a) here.
-AbC
-
+$\lnot t$ = "It is not the case that Josh is a CSE Major
 \item
-You provide the solution to question 1(b) here.
-
+$\lnot q$ = "It is not the case that Josh scored at least 90\% in the labs
+\item
+$(p \vee q) \rightarrow r$: "If Josh scored 100\% in the CSE015 final or if Josh scored 90\% in the labs, then Josh gets an A+
+\item 
+$(p\wedge q) \rightarrow r$: "If Josh scored 100\% in the CSE015 final and if Josh scored at least 90\% in the labs, then Josh receives an A+ in CSE015
+\item 
+$\lnot(t \rightarrow r)$: "It is not the case that if Josh is a CSE major then he will receive an A+ in CSE015.
 \end{enumerate}
+
 
 \item
 \textbf{Question 2:}
+Truth Tables
+\begin{enumerate}[label=(\alph*)]
+\item
+Truth table for: $p \oplus (q \vee \lnot r)$ \\
+\begin{tabular}{|c|c|c|c|c|c|} \hline
+$p$ & $q$ & $r$ & $\lnot r$ & $q \vee \lnot r$ & $p \oplus (q \vee \lnot r)$ \\
+\hline
+T & T & T & F & T & F \\
+\hline
+T & T & F & T & T & F \\
+\hline
+T & F & T & F & F & T \\
+\hline
+T & F & F & T & T & F \\
+\hline
+F & T & T & F & T & T \\
+\hline
+F & T & F & T & T & T \\
+\hline
+F & F & T & F & F & F \\
+\hline
+F & F & F & T & T & T \\
+\hline
+\end{tabular}
+\item
+Truth table for: $(p \vee q) \rightarrow (\lnot r \vee p)$ \\
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+$p$ & $q$ & $r$ & $p \vee q$ & $\lnot r$ & $\lnot r \vee p$ & $(p \vee q) \rightarrow (\lnot r \vee p)$ \\
+\hline
+T & T & T & T & F & T & T \\
+\hline
+T & T & F & T & T & T & T \\
+\hline
+T & F & T & T & T & T & T \\
+\hline
+T & F & F & T & T & T & T \\
+\hline
+F & T & T & T & F & F & F \\
+\hline
+F & T & F & T & T & T & T \\
+\hline
+F & F & T & F & F & F & T \\
+\hline
+F & F & F & F & T & T & T \\
+\hline
+\end{tabular}
+
+\item 
+Truth table for: $((p \rightarrow q) \wedge p) \rightarrow q$ \\
+\begin{tabular}{|c|c|c|c|c|} \hline
+$p$ & $q$ & $p \rightarrow q$ & $(p \rightarrow q) \wedge p$ & $((p \rightarrow q) \wedge p) \rightarrow q$ \\
+\hline
+T & T & T & T & T \\
+\hline
+T & F & F & F & T \\
+\hline
+F & T & T & F & T \\
+\hline
+F & F & T & F & T \\
+\hline
+\end{tabular}
+\end{enumerate}
+
+\item
+\textbf{Question 3:}
+Logical Equivalencies
 
 \begin{enumerate}[label=(\alph*)]
 \item
-You provide the solution to question 2(a) here.
+Truth table proof for: $p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)$ (Distributive Property) \\
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+$p$ & $q$ & $r$ & $q \wedge r$ & $p \vee (q \wedge r)$ & $p \vee q$ & $p \vee r$ & $(p \vee q) \wedge (p \vee r)$ & $p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)$ \\
+\hline
+T&T&T&T&T&T&T&T&T \\ %When I found that you didn't need spaces...sheesh
+\hline
+T&T&F&F&T&T&T&T&T \\
+\hline
+T&F&T&F&T&T&T&T&T \\ 
+\hline
+T&F&F&F&T&T&T&T&T \\
+\hline
+F&T&T&T&T&T&T&T&T \\
+\hline
+F&T&F&F&F&T&F&F&T \\
+\hline
+F&F&T&F&F&F&T&F&T \\
+\hline
+F&F&F&F&F&F&F&F&T \\
+\hline
+\end{tabular}
+\item 
+Truth table proof for: $(p \rightarrow q) \wedge (p \rightarrow r) \equiv (q \wedge r)$ \\
+\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+$p$ & $q$ & $r$ & $p \rightarrow q$ & $p \rightarrow r$ & $(p \rightarrow q) \wedge (p \rightarrow r)$ & $q \wedge r$ & $(p \rightarrow q) \wedge (p \rightarrow r) \equiv (q \wedge r)$ \\
+\hline
+T&T&T&T&T&T&T&T \\
+\hline
+T&T&F&T&F&F&F&T \\
+\hline
+T&F&T&F&T&F&F&T \\
+\hline
+T&F&F&F&F&F&F&T \\
+\hline
+F&T&T&T&T&T&T&T \\
+\hline
+F&T&F&T&T&T&F&F \\
+\hline
+F&F&T&T&T&T&F&F \\
+\hline
+F&F&F&T&T&T&F&F \\
+\hline
+\end{tabular}
+\end{enumerate}
 
 \item
-You provide the solution to question 2(b) here.
+\textbf{Question 4:}
+Tautologies, Contingencies, and Contradictions\\
 
+\begin{enumerate}[label=(\alph*)]
+\item
+$p \rightarrow (p \vee q)$: Is a tautology because the compound proposition is always true. \\
+Proof: \\
+\begin{tabular}{|c|c|c|c|} \hline
+$p$ & $p \wedge q$ & $\lnot p$ & $(p \wedge q) \rightarrow \lnot p$ \\
+\hline
+T&T&T&T \\
+\hline
+T&F&T&T \\
+\hline
+F&T&T&T \\ 
+\hline
+F&F&F&T \\
+\hline
+\end{tabular}
+\item 
+$(p \wedge q) \rightarrow \lnot p$: Contingency because the compound proposition is not always true or false. \\
+Proof: \\
+\begin{tabular}{|c|c|c|c|c|} \hline
+$p$ & $q$ & $p \wedge q$ & $\lnot p$ & $(p \wedge q) \rightarrow \lnot p$ \\
+T&T&T&F&F \\
+\hline
+T&F&F&F&T \\
+\hline
+F&T&F&T&T \\
+\hline
+F&F&F&T&T \\
+\hline
+\end{tabular}
+\item 
+$(p \rightarrow (q \vee r)) \rightarrow (\lnot q \vee p)$: Contingency because the compound proposition is not always true or false. \\
+Proof: \\
+\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+$p$ & $q$ & $r$ & $q \vee r$ & $p \rightarrow (q \vee r)$ & $ \lnot q$ & $\lnot q \vee p$ & $(p \rightarrow (q\vee r)) \rightarrow (\lnot q \vee p)$ \\
+T&T&T&T&T&F&T&T \\
+\hline
+T&T&F&T&T&F&T&T \\ 
+\hline
+T&F&T&T&T&T&T&T \\
+\hline
+T&F&F&F&F&T&T&T \\
+\hline
+F&T&T&T&T&F&F&F \\
+\hline
+F&T&F&T&T&F&F&F \\ 
+\hline
+F&F&T&T&T&T&T&T \\
+\hline
+F&F&F&F&T&T&T&T \\
+\hline
+\end{tabular}
+\end{enumerate}
+\item
+\textbf{Question 5:}De Morgan's Laws\\
+Using De Morgan's laws, rewrite the following sentences in English.\\
+\begin{equation}
+ \lnot(p \wedge q) \equiv (\lnot p \vee \lnot q)
+\end{equation}
+\begin{equation}
+\lnot(p \vee q) \equiv (\lnot p \wedge \lnot q) 
+\end{equation}
+\begin{enumerate}[label=(\alph*)]
+\item
+You cannot be late and you cannot smoke. \\
 \begin{itemize}
 
-\item Some item
-
-\item Another item
-
+\item 
+$\lnot p$: "It is not the case that you can be late.
+\item 
+$\lnot q$: "It is not the case that you can smoke.
+\item 
+$p$: You can be late.
+\item 
+$q$: You can smoke.
 \end{itemize}
-
-\begin{tabular}{l c r}
-
-Left & center & right \\
-Another & row & here \\
-
-\end{tabular}
-
-
-Inline example: $p \rightarrow \lnot q$
-
-Displayed example:
-
-\begin{equation}
-p \land q
-\end{equation}
-
-
+By De Morgan's law, this sentence can be translated to: "It is not the case that you can be late or smoke" \\
+\item 
+It is not the case that you can take an annuity and you can take a lump sum. \\
+\begin{itemize}
+\item
+$\lnot p$: "You cannot take an annuity"
+\item 
+$\lnot q$: "You cannot take a lump sum"
+\item 
+$p$: "You can take an annuity"
+\item 
+$q$: "You can take a lump sum
+\end{itemize}
+By De Morgan's law, this sentence can be translated to: You cannot take an annuity or a lump sum"
 \end{enumerate}
+
 
 \end{enumerate}
 
