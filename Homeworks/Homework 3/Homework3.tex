@@ -1,0 +1,219 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathpartir}
+\usepackage{tabularx}
+
+% To produce a letter size output. Otherwise will be A4 size.
+\usepackage[letterpaper]{geometry}
+
+% For enumerated lists using letters: a. b. etc.
+\usepackage{enumitem}
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+
+\begin{document}
+
+% Edit the following putting your first and last names and replace XXX with your lab section (e.g., F3L).
+\author{Joshua Chin\\
+Lab 021-CSE 015 01L}
+
+% Edit the following replacing X with the HW number.
+\title{CSE 15: Discrete Mathematics\\
+Fall 2021\\
+Homework \#3\\
+Solution}
+
+% Put today's date in the following.
+\date{October 15, 2021}
+\maketitle
+
+% ========== Begin questions here
+\begin{enumerate}
+
+\item
+\textbf{Question 1:} Rules of Inference \\
+Convert: 
+\begin{equation*}
+\mprset{flushleft}
+\inferrule
+    {\textrm{If Jane does not fly, then she is not a bird.}\\\\ \textrm{Jane is a bird.}}
+    {\therefore \textrm{Jane flies.}}
+\end{equation*}
+Into argument form: 
+\begin{equation*}
+\mprset{flushleft}
+\inferrule
+    {\lnot q \rightarrow \lnot p \\\\ p}
+    {\therefore r}
+\end{equation*}
+
+\item 
+\textbf{Question 2:} More Rules of Inference \\
+For each of the following arguments, write w hich rule of inference is used.
+\begin{enumerate}[label=(\alph*)]
+\item 
+Bats can fly($p$) and are mammals($q$). Therefore bats are mammals($q$). \\
+$
+\mprset{flushleft}
+\inferrule
+    {p \wedge q}
+    {\therefore q}
+$\\
+This is Simplification.
+\item 
+Pigs are mammals($q$) or birds($p$). Pigs are not birds($\lnot p$). Therefore pigs are mammals($q$).\\ 
+$
+\mprset{flushleft}
+\inferrule
+    {p \vee q \\\\ \lnot p}
+    {\therefore q}
+$\\
+This is Disjunctive Syllogism.
+\item 
+Jack is a cse major($p$). Jack is a freshmen($q$). Therefore Jack is a CSE major and a freshmen($p \wedge q$).\\
+$
+\mprset{flushleft}
+\inferrule
+    {p \\\\ q}
+    {\therefore p \wedge q}
+$\\
+This is Conjunction.
+\item
+Mary is a CSE major($p$). Therefore Mary is a CSE major or Mary is a History major($p \vee q$).\\
+$
+\mprset{flushleft}
+\inferrule
+    {p}
+    {\therefore p \vee q}
+$\\
+This is Addition.
+\item 
+If I go hiking, I will sweat a lot($p \rightarrow q$). If I sweat a lot, I will lose weight($q \rightarrow r$). Therefore, if I go hiking, I will lose weight($p \rightarrow r$).\\
+$
+\mprset{flushleft}
+\inferrule
+    {p \rightarrow q \\\\ q \rightarrow r}
+    {\therefore p \rightarrow r}
+$\\
+This is Hypothetical Syllogism.
+\end{enumerate}
+\item
+\textbf{Question 3:} Checking arguments. \\
+State whether the following arguments are correct or not with proof.
+\begin{enumerate}[label=(\alph*)]
+\item 
+If it is sunny, then I will go swimming. It is not sunny. Therefore  I will not go swimming.\\
+Argument form: \\
+$
+\mprset{flushleft}
+\inferrule
+    {p \rightarrow q \\\\ \lnot p}
+    {\therefore \lnot q}
+$\\
+This argument is valid. p needs to be true in order for q to be true. Since p is not true, q cannot be true.
+\item 
+If it is Sunday, then I will go to the park. It is not sunday. Therefore I will not go to the park.\\
+$
+\mprset{flushleft}
+\inferrule
+    {p \rightarrow q \\\\ \lnot q}
+    {\therefore \lnot p}
+$\\
+This argument is invalid. p needs to be true only for q to be true. While q is not true, that does not mean p cannot be true.
+\item 
+I will pass the class if and only if I score at least 6F percent on the final exam. I scored 55 percent on the final exam. Therefore, I will not pass the class.\\
+$
+\mprset{flushleft}
+\inferrule
+    {p \leftrightarrow q \\\\ \lnot q}
+    {\therefore \lnot p}
+$\\
+This argument is valid. Both p and q need eachother to be true. Since one is not true, the other cannot be true.
+\end{enumerate}
+\item 
+
+\textbf{Question 4:} Proof by Contraposition. \\
+if $n$ is an integer and $n^2$ is odd, then $n$ is odd.\\
+This is: 
+\begin{equation*}
+    p \rightarrow q
+\end{equation*}
+The contrapositive of this is:
+\begin{equation*}
+    \lnot p \rightarrow \lnot q
+\end{equation*}
+This is the same thing as: if $n$ is an integer and $n^2$ is even, then $n$ is even. This is a true statement.
+
+\item 
+\textbf{Question 5:} Proof by Cases \\
+Prove: $((pT \land p2 \land p3) \to q) <-> ((pT \to q) \land (p2 \to q) \land (p3 \to q))$ \\
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    $pT$ & $p2$ & $p3$ & $q$ & $pT \to q$ & $p2 \to q$ & $p3 \to q$ & $pT \land p2 \land p3 \to q$ \\
+    \hline
+    F & F & F & F & T & T & T & F\\
+    \hline
+    F & F & F & T & T & T & T & F\\
+    \hline
+    F & F & T & F & T & T & F & F\\
+    \hline
+    F & F & T & T & T & T & T & F\\
+    \hline
+    F & T & F & F & T & F & T & F\\
+    \hline
+    F & T & F & T & T & T & T & F\\
+    \hline
+    F & T & T & F & T & F & F & F\\
+    \hline
+    F & T & T & T & T & T & T & F\\
+    \hline
+    T & F & F & F & F & T & T & F\\
+    \hline
+    T & F & F & T & T & T & T & F\\
+    \hline
+    T & F & T & F & F & T & F & F\\
+    \hline
+    T & F & T & T & T & T & T & F\\
+    \hline
+    T & T & F & F & F & F & T & T\\
+    \hline
+    T & T & F & T & T & T & T & T\\
+    \hline
+    T & T & T & F & F & F & F & F\\
+    \hline
+    T & T & T & T & T & T & T & T\\
+    \hline
+\end{tabular} \\
+\begin{tabular}{|c|c|}
+    \hline
+    $(pT \to q) \land (p2 \to q) \land (p3 \to q)$ & $((pT \land p2 \land p3) \to q) <-> ((pT \to q) \land (p2 \to q) \land (p3 \to q))$ \\
+    \hline
+    T & T \\
+    \hline
+    T & T \\
+    \hline
+    T&T \\
+    \hline
+    F&T \\
+    \hline
+    F&T \\
+    \hline
+    F&T \\
+    \hline
+    F&T \\
+    \hline
+    F&T \\
+    \hline
+    F&T \\
+    \hline
+    T&T \\
+    \hline
+\end{tabular}\\
+Judging by the final column of the truth table, this is a tautology.
+\end{enumerate}
+\end{document}

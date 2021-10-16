@@ -31,3 +31,11 @@ tableConjunction.display()
 print('Resolution')
 tableResolution = TruthTable(['p', 'q', 'r'], ['-p','-p or r', 'p or q', 'q or r', '((p or q) and (-p or r))', '((p or q) and (-p or r)) -> (q or r)'])
 tableResolution.display()
+
+print('number 5')
+table5 = TruthTable(['p1','p2','p3','q'],['p1 -> q', 'p2 -> q', 'p3 -> q', 'p1 and p2 and p3 -> q', '(p1 -> q) and (p2 -> q) and (p3 -> q)', '((p1 and p2 and p3) -> q) <-> ((p1 -> q) and (p2 -> q) and (p3 -> q))'])
+table5.display()
+table5.latex()
+
+table5_1 = TruthTable([''],[ '(p1 -> q) and (p2 -> q) and (p3 -> q)', '((p1 and p2 and p3) -> q) <-> ((p1 -> q) and (p2 -> q) and (p3 -> q))'])
+table5_1.latex()
