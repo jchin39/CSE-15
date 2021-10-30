@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathpartir}
+\usepackage{tabularx}
+
+% To produce a letter size output. Otherwise will be A4 size.
+\usepackage[letterpaper]{geometry}
+
+% For enumerated lists using letters: a. b. etc.
+\usepackage{enumitem}
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+
+\begin{document}
+
+% Edit the following putting your first and last names and replace XXX with your lab section (e.g., F3L).
+\author{Joshua Chin\\
+Lab 021-CSE 015 01L}
+
+% Edit the following replacing X with the HW number.
+\title{CSE 15: Discrete Mathematics\\
+Fall 2021\\
+Homework \#4\\
+Solution}
+
+% Put today's date in the following.
+\date{October 29, 2021}
+\maketitle
+
+% ========== Begin questions here
+\begin{enumerate}
+
+\item
+\textbf{Question 1:} Set Operations \\
+Consider the following sets and let the universe set $U$ be the set of UCM students. 
+\begin{itemize}
+    \item 
+    $A$ is the set of UCM students registered in CSE015
+    \item 
+    $B$ is the set of UCM students who live in Merced county
+    \item 
+    $C$ is the set of UCM students who are freshman
+\end{itemize}
+Write the definition of the following sets using English language sentences similar to those used to define the sets given above. 
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $A \cup B$ = The union of the sets of UCM students who either registered in CSE015 or live in Merced county. Therefor, the set of students who are registered in CSE015 OR are in Merced County.
+    \item 
+    $A \cap C$ = The intersection of the sets of UCM students who are freshman and are registered in CSE015. Therefore, the set of students who are freshman AND registered in CSE015
+    \item 
+    $C \backslash B$ = The difference between the set of UCM students who are freshman and the set of UCM students who are in Merced County. Therefore, the set of Freshman.
+    \item 
+    $\overline{A}$ = The complement of the set of UCM students registered in CSE015. Therefore, the set of UCM students.
+    \item 
+    $A \cap B \cap C$ = The intersection of the sets of UCM students who are freshman, who live in Merced county, and who are registered in CSE015. Therefore, the set of UCM students. 
+    \end{enumerate}
+\item
+\textbf{Question 2:} Cartesian Product \\
+Consider the following three finite sets:
+\begin{itemize}
+    \item 
+    $A = \{ 1,2,3,4\} $
+    \item 
+    $B = \{ a, b , c\} $
+    \item 
+   $C = \{ True, False\} $
+\end{itemize}
+Write the following Cartesian products: 
+\begin{enumerate}[label=(\alph*)]
+    \item 
+    $C \times A$ = $\{(True, 1), (True, 2), (True, 3), (True, 4), (False, 1), (False, 2), (False, 3), (False, 4)\} $
+    \item 
+    $B \times B$ = $\{(a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b),(c,c)\}$
+    \item 
+    $B \times A \times C$ = $\{(a,1,True), (a,2, True), (a, 3, True), (a, 4, True), (a, 1, False), (a, 2, False), (a, 3, False), \\ (a, 4, False), (b,1,True), (b,2, True), (b, 3, True), (b, 4, True), (b, 1, False), (b, 2, False), (b, 3, False), \\ (b, 4, False), (c,1,True), (c,2, True), (c, 3, True), (c, 4, True), (c, 1, False), (c, 2, False), (c, 3, False), \\ (c, 4, False)\}$
+\end{enumerate}
+\item
+\textbf{Question 3:} Composite Cartesian Products \\
+Let $A, B, and C$ be sets. Is the following equality true or false?
+\begin{equation*}
+    A \times (B \cup C) = (A \times B) \cup (A \times C)
+\end{equation*}
+This is true. If you distribute $A \times (B \cup C)$ then you end up with $(A \times B) \cup (A \times C)$ Which is the same as the equality by distributive laws 1 and 2. 
+\item
+\textbf{Question 4:} Relations \\
+Let $A = \{a,b,c,d\}$ The following relations are defined over $A \times A$. State whether each rlation is reflexive, symmetric, anti-symmetric, transitive, or none of the former. \\
+$A \times A$ = $\{(a,a),(a,b),(a,c),(a,d),(b,a),(b,b),(b,c),(b,d),(c,a),(c,b),(c,c),(c,d),(d,a),(d,b),(d,c),(d,d)\}$
+\begin{enumerate}[label=(\alph*)]
+    \item 
+    $R1 = \{(a,b),(a,c),(a,a),(b,a),(c,a)\}$\\
+    This is symmetric and transitive. For all $(a,b)$ and $(a,c)$ there is $(b,a)$ and $(c,a)$. This means it is symmetric. There is also $(a,b), (b,a),(a,c)$ which is a transitive sequence.
+    \item 
+    $R2 = \{(a,b),(b,b),(b,c),(c,c),(a,c)\}$ \\
+    This is transitive. There is $(a,b),(b,c),(a,c)$, which is transitive. It cannot be symmetric or antisymmetric because there are no flipped arguments. It cannot be reflexive because the relation lacks $(c,c)$.
+    \item 
+    $R3 = \{(a,b),(d,c),(c,a),(c,d),(a,b)\}$ \\
+    No properties. There are no matching arguments, and no argument sequence that is transitive. There is 1 pair of flipped arguments but there needs to be an additional pair and a matching pair to be symmetric.
+    \item 
+    $R4 = \{(a,a),(b,b),(c,c)\}$ \\
+    Reflexive. There are 3 pairs of matching arguments and that is all. Therefor it is reflexive.
+\end{enumerate}
+\item
+\textbf{Question 5:} Functions \\
+Determine if $f: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ is a function if: 
+\begin{enumerate}[label=(\alph*)]
+    \item 
+    $f(m,n) = 2m-n$
+    Function
+    \item 
+    $f(m,n) = m^2 - n^2$
+    Not a function
+    \item 
+    $f(m,n) = |m|-|n|$
+    Function
+    \item 
+    $f(m,n) = m^2 - 4$
+    Not a function
+\end{enumerate}
+\end{enumerate}
+\end{document}
