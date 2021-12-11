@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathpartir}
+\usepackage{tabularx}
+
+% To produce a letter size output. Otherwise will be A4 size.
+\usepackage[letterpaper]{geometry}
+
+% For enumerated lists using letters: a. b. etc.
+\usepackage{enumitem}
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+
+\begin{document}
+
+% Edit the following putting your first and last names and replace XXX with your lab section (e.g., F3L).
+\author{Joshua Chin\\
+Lab 021-CSE 015 01L}
+
+% Edit the following replacing X with the HW number.
+\title{CSE 15: Discrete Mathematics\\
+Fall 2021\\
+Homework \#7\\
+Solution}
+
+% Put today's date in the following.
+\date{December 10, 2021}
+\maketitle
+
+% ========== Begin questions here
+\begin{enumerate}
+
+\item
+\textbf{Question 1:} Asymptotic Notation \\
+Inorder to determine complexity, you ignore all constants and keep track of the variable $n$. So if anywhere in the function there exists any $n^2$, the complexity is $O(n^2)$
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $f(n) = 178n+45$ \\
+    Based on the rule above, in this case there is only one power of $n$. Therefore, it is not $O(n^2)$. 
+    \item 
+    $f(n) = nlogn+12$ \\
+    Based on the rule above, in this case there is a single power of $n$ and a logarithm of $n$. Therefore, it is not $O(n^2)$.
+    \item 
+    $f(n) = 34n^2+34n+34$ \\
+    Based on the rule above, in this case we see $n$ with a power of 2. Therefore, this function has a complexity of $O(n^2)$.
+    \item 
+    $f(n) = \sqrt{n}+2 $ \\
+    Based on the rule above, in this case there is only a square root of $n$. Therefore, it is not $O(n^2)$.
+    \item 
+    $f(n) = 0.001n^3+72n$ \\
+    Based on the rule above, in this case we see $n$ with a power of 3 and $n$ with a power of n. Therefore it is not $O(n^2)$.
+\end{enumerate}  
+
+\item
+\textbf{Question 2:} Asymptotic Notation 2 \\
+This is the order of the 9 functions in from fastest Big-O complexity to slowest: 
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $logn$
+    \item
+    $\sqrt{n}$
+    \item 
+    $n$
+    \item 
+    $nlogn$
+    \item 
+    $n^2$
+    \item 
+    $n^2logn$
+    \item 
+    $n^4$
+    \item
+    $2^n$
+    \item 
+    $3^n$
+\end{enumerate}
+\item
+\textbf{Question 3:} Asymptotic Growth  \\
+For this, we find the highest value of n that Computer A and B can solve within an hour with the the inequality $f(n) \leq g(n)$ where $f(n)$ is the algorithm and $g(n)$ is the computer.\\
+Since we are inluding all numbers up to and including the highest value, simply equating both sides of the inequality will also work.
+\begin{enumerate}[label=(\alph*)]
+    \item
+    Computer A: $3.6 * 10^9$
+    \begin{enumerate}[label=(\alph*)]
+        \item 
+        Algorithm 1: $5n^2+34n+12$ \\
+        $n = 26829$, it is given.
+        \item 
+        Algorithm 2: $10n+4$ \\
+        $10n + 4 = 3.9 * 10^9$\\
+        $10n = 3600000000 - 4$ \\
+        $n = 3599999996/10$ \\
+        $n = 359999999.6$ 
+        \item 
+        Algorithm 2: $2^n$\\
+        $2^n = 3.9 * 10^9$\\
+        $nln(2) = ln(3600000000)$\\
+        $n = \frac{ln(3600000000)}{ln(2)}$\\
+        $n \approx  31.75$
+    \end{enumerate}
+    \item 
+    Computer B: $3.6 * 10^{11}$
+    \begin{enumerate}[label=(\alph*)]
+        \item 
+        Algorithm 1: $5n^2+34n+12$ \\
+        $5n^2+34n+12 = 3.6*10^{11}$ \\
+        $5n^2+34+360000000012 = 0$ \\
+        Solve with quadratic formula: $n \approx 268234.76$
+        \item 
+        Algorithm 2: $10n + 4$ \\
+        $10n+4 = 3.6*10^{11}$\\
+        $10n = 359999999996$\\
+        $n = 359999999996/10$ \\
+        $n = 35999999999.6$
+        \item 
+        Algorithm 2: $2^n$\\
+        $2^n = 3.6 * 10^{11}$\\
+        $nln(2) = ln(360000000000)$\\
+        $n = \frac{ln(360000000000)}{ln(2)}$\\
+        $n \approx 38.39$
+    \end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{document}
