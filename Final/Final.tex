@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathpartir}
+\usepackage{tabularx}
+
+% To produce a letter size output. Otherwise will be A4 size.
+\usepackage[letterpaper]{geometry}
+
+% For enumerated lists using letters: a. b. etc.
+\usepackage{enumitem}
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+
+\begin{document}
+
+% Edit the following putting your first and last names and replace XXX with your lab section (e.g., F3L).
+\author{Joshua Chin\\
+Lab 021-CSE 015 01L}
+
+% Edit the following replacing X with the HW number.
+\title{CSE 15: Discrete Mathematics\\
+Fall 2021\\
+Final \\
+Solution}
+
+% Put today's date in the following.
+\date{December 15, 2021}
+\maketitle
+
+% ========== Begin questions here
+\begin{enumerate}
+
+\item
+\textbf{Question 1:} Logical Equivalences \\
+$(p \rightarrow q) \wedge (\lnot r \rightarrow \lnot q) \equiv \lnot r \rightarrow \lnot p$ \\
+Proof: \\
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+$p$ & $q$ & $r$ & $p \rightarrow q$ & $\lnot r$ & $\lnot q$ & $\lnot r \rightarrow \lnot q$ & $(p \rightarrow q) \wedge (\lnot r \rightarrow \lnot q)$ & $(p \rightarrow q) \wedge (\lnot r \rightarrow \lnot q) \equiv \lnot r \rightarrow \lnot p$ \\
+\hline
+T&T&T&T&F&F&T&T&T \\
+\hline
+T&T&F&T&T&F&F&F&T \\
+\hline
+T&F&T&F&F&T&T&F&F \\
+\hline
+T&F&F&F&T&T&T&F&F \\
+\hline
+F&T&T&T&F&F&T&T&T \\
+\hline
+F&T&F&T&T&F&F&F&T \\
+\hline
+F&F&T&T&F&T&T&T&T \\
+\hline
+F&F&F&T&T&T&T&T&T \\
+\hline
+\end{tabular}
+The expressions are not equivalent. Looking at the 7th 8th and 9th columns of the truth table, we can clearly see different truth values for the expressions.
+
+\item
+\textbf{Question 2:} Quantifiers 
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $\forall x(x^2-1 > 0)$ \\
+    FALSE: When $x$ is 1, it becomes $1-1 > 0$ which is not true. This is also the case when $x$ is 0 or -1.
+    \item
+    $\exists x(x^3-1 = 0)$ \\
+    TRUE: When $x$ is 1, this equation is satisfied. Therefore at least 1 value of x exists where this is true.
+    \item 
+    $\forall x \exists y(x^2+y^2 = 1)$ \\
+    FALSE: There is not one value of $y$ that exists for all $x$ that equates to 1. For example: when $x$ is 1, $y = 0$ can work. However, for $x > 1$, no value of y exists to result in 1. 
+    \item 
+    $\exists x \exists y(x^4+y^4=0)$ \\
+    TRUE: When both $x$ and $y$ are 0, this is true. Therefore, there exists 1 value for both $x$ and $y$ that satisfies this.
+\end{enumerate}
+\item
+\textbf{Question 3:} Negation of Complex Sentences
+\begin{equation*}
+    \text{De Morgan's laws} 
+\end{equation*}
+\begin{equation*}
+    \lnot \forall xP(x) \equiv \exists x \lnot P(x) 
+\end{equation*}
+\begin{equation*}
+    \lnot \exists xP(x) \equiv \forall x \lnot P(x) 
+\end{equation*}
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $\lnot \exists y \exists xP(x,y)$ \\
+    By De Morgan's laws, this becomes: $\forall y \forall x \lnot P(x,y)$
+    \item 
+    $\lnot \forall x \exists y(P(x, y) \wedge Q(x, y))$ \\
+    By De Morgan's laws, this becomes:  $\exists x \forall y (\lnot P(x, y) \wedge \lnot Q(x, y))$
+    \item 
+    $\lnot \exists y(\exists xR(x,y) \vee \forall xS(x, y))$ \\
+    By De Morgan's laws, this becomes: $\forall y (\forall x \lnot R(x,y) \vee \exists x \lnot S(x, y))$
+\end{enumerate}
+\item 
+\textbf{Question 4:} Cartesian Product \\
+$A = \{a,b,c\}$ \\
+$B = \{dog,cat,mouse\} $ \\
+$C = \{True, False\} $ 
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $A \times  C = \{(a, True), (a, False), (b, True), (b, False), (c, True), (c, False)\}$
+    \item 
+    $A \times B \times C \times A$ \\
+    $A$ has 3 elements. $B$ has 3 elements. $C$ has 2 elements. Multiplying these together we get: $3 \times 3 \times 2 \times 3$. This results in 54, so the set $A \times B \times C \times A$ has 54 elements. 
+    \item
+    One element of $A \times B \times C \times A$: $\{(a,dog,True,a)\}$
+    \item
+    $A \times B = B \times A$ is not true because the sets are different. While they are being multiplied together both times, the order of each element is discerned by which set is being multipled by the other. \\
+    $A \times B = \{(a, dog), (a, cat), (a, mouse), (b, dog), (b, cat), (b, mouse), (c, dog), (c, cat), (c, mouse)\}$ \\
+    $B \times A = \{(dog, a), (dog, b), (dog, c), (cat, a), (cat, b), (cat, c), (mouse, a), (mouse, b), (mouse, c)\}$
+    \item 
+    $(True, True, dog)$ is not a member of $C \times B \times C$. The 2nd term of the element does not match with B, which is the 2nd multiplied set. The second $True$ and $dog$ should be switched.
+\end{enumerate}
+\item
+\textbf{Question 5:} Arguments 
+\begin{enumerate}[label=(\alph*)]
+    \item
+    Every student enrolled in CSE015 has access to computer lab \#2. Jennifer does not have access to computer lab \#2. Therefore Jennifer is not enrolled in CSE015. \\
+    This is correct. Since all students in CSE have access to the computer lab, you cannot be a CSE student and not have access to the lab. Since jennifer does not have access to the lab, she cannot be a CSE student. 
+    \item Every student majoring in computer science must take CSE120. Jake is taking CSE120.
+    Therefore Jake is majoring in computer science \\
+    This is incorrect. It is a requirement for CSE students to take CSE 120. It is not stated that it is a requirement to be majored in CSE to take CSE 120. Jake taking CSE 120 does not mean he is a CSE major.
+\end{enumerate}
+\item
+\textbf{Question 6:} Functions
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $f(x,y) = x + y$ \\
+    This is surjective because any integer can be a result of the sum of two integers. However, it is not injective because the sum of two different integers can result in the same value. For example: $f(2,3) = 5$ and $f(4,1) = 5$. This is surjective.
+    \item 
+    $f(x,y) = |x+y|$ \\
+    This is not surjective because the sum of any two negative integers would never result in a negative integer. It is also not injective because again, $f(2,3) = 5$ and $f(4,1) = 5$. This is none of the former.
+    \item 
+    $f(x,y) = x^2-y$ \\
+    This is surjective because all integers can be a result of the difference between x and y, as y can be negative. However, it is not  injective because $f(5,1) = 24$ and $f(-5,1) = 24$ due to $x^2$. This is surjective
+\end{enumerate}
+\item
+\textbf{Question 7:} Order of Growth.
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $f_1(n) = 4n^2+logn$\\
+    $f_2(n) = 21n + \sqrt{n}$ \\
+    Function 1 is Big O of function 2, function 2 is not Big O of function 1. Function 1's Growth rate of $O(n^2)$ is larger than function 2's Growth rate of $O(n)$.
+    \item 
+    $f_1(n) = 3n^2+2^n$ \\
+    $f_2(n) = 4n^2+45n$ \\
+    Function 1 is Big O of function 2, function 2 is not Big O of function 1. Function 1's Growth rate of $O(2^n)$ is larger than function 2's growth rate of $O(n^2)$.
+    \item 
+    $f_1(n) = 2n^3 + 4nlogn$ \\
+    $f_2(n) = nlogn + 3n^2 + 12n^3$ \\
+    Both functions are Big O of eachother. Each have a growth rate of $O(n^3)$, so both are Big O of eachother.
+    \item 
+    $f_1(n) = 4n^2logn^2+21n$ \\
+    $f_2(n) = 0.002n^3 + n$ \\
+    Function 2 is Big O of function 1, function 1 is not Big O of function 2. Function 2's growth rate of $O(n^3)$ is larger than function 1's growth rate of $O(n^2logn^2)$.
+\end{enumerate}
+\item
+\textbf{Question 8:} Induction.
+\begin{equation*}
+    \sum_{i = 1}^{n}2^{i-1}\cdot i=2^n(n-1)+1 
+\end{equation*}
+\begin{enumerate}[label=(\alph*)]
+    \item
+    Base step n = 1: $P(1) = 2^1(1-1)+1$ \\
+    $2(0)+1$ \\
+    $1$
+    \item 
+    Induction step n = k: $P(k) = 2^k(k-1)+1$
+    \item 
+    Principle of Induction: $P(k+1) = 2^{k+1}(k)+1$
+\end{enumerate}
+\item
+\textbf{Question 9:} Modular Arithmetic
+\begin{enumerate}[label=(\alph*)]
+    \item
+    $a+_m d$\\
+    $a = 5, d = 8$ \\
+    $5+_m 8$ \\
+    $m = 13$ \\
+    $5+_{13} 8$ \\
+    $13\text{mod}13 = 0$
+    \item
+    $a +_m (m - a)$ \\
+    $a = 9, m = 13$ \\ 
+    $9+_{13} (13-9)$ \\
+    $9+_{13} 4$ \\
+    $13\text{mod}13 = 0$
+    \item
+    $a \text{mod} d$ \\
+    $a = 38, d = 0$ \\
+    $38\text{mod}13 =12$ \\
+    $4 \neq  12$
+    \item 
+    $r = a\text{mod}d$ \\
+    $a = -4, d = 13$ \\
+    $r = -4\text{mod}13$ \\
+    $r = 9$
+
+\end{enumerate}
+\item
+\textbf{Question 10:} Cryptography \\
+k = 4\\
+A:1 \\
+B:2 \\
+C:3 \\
+D:4 \\
+E:5 \\
+F:6 \\
+G:7 \\
+H:8 \\
+I:9 \\
+J:10 \\
+K:11 \\
+L:12 \\
+M:13 \\
+N:14 \\
+O:15 \\
+P:16 \\
+Q:17 \\
+R:18 \\
+S:19 \\
+T:20 \\
+U:21 \\
+V:22 \\
+W:23 \\
+X:24 \\
+Y:25 \\
+Z:26 \\
+HMWGVIXIDQEXL \\
+8,13,23,7,22,9,24,9,4,17,5,24,12\\
+Algorithm: $f(p) = (p+k)$ \\
+$f(p) = (p-4)$\\
+f(H) = 8 - 4 = 4 = D \\
+f(M) = 13 - 4 = 0 = I \\
+f(W) = 23 - 4 = 19 = S \\
+f(G) = 7 - 4 = 3 = C \\
+f(V) = 22 - 4 = 18 = R \\
+f(I) = 9 - 4 = 5 = E \\
+f(X) = 24 - 4 = 20 = T \\
+f(I) = 9 - 4 = 5 = E \\
+f(D) = 4 - 4 = 0 = SPACE \\
+f(Q) = 17 - 4 = 13 = M \\
+f(E) = 5 - 4 = 1 = A \\
+f(X) = 24 - 4 = 20 = T \\
+f(L) = 12 - 4 = 8 = H \\
+DISCRETE MATH \\
+By assigning each letter a corresponding number and subtracting the key from each letter's number in the ciphertext, I found the plaintext message.
+\end{enumerate}
+\end{document}
